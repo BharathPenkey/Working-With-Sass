@@ -18,7 +18,7 @@ you should know programming fundamentals and css
 dowload rubyinstaller and preprops.io  we should add files in the preprops .io i.e adding project and next if we save in .scss it automatically compiles and appears in css file which you have created 
 
 sass -> in sass we dont use semi colons and curly braces 
-scss ->  it is similar to normal css but we can use variables ,nesting and mixins 
+scss ->  it is similar to normal css but we can use variables ,nesting and mixins ,functions ,for mixins you can pass variables aaas well
 
 for dummy image you can do src="http://placehold.it/150x150"
 
