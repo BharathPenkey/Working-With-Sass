@@ -60,3 +60,35 @@ main-nav li {} li nested inside main-nav
 
 
 but we should use clear fixings rule 
+
+
+//    mixins 
+// is a chunk of reusable or sass we inject 
+instead of creating same things we can also pass a variables to mixins
+
+
+lets create a single mixins for 2 banners (images)
+
+how do we create a mixin 
+@mixin mixinName {
+    // code for css 
+}
+
+for import mixin
+.classname{
+    @include mixinName;
+    @include mixinName()
+}
+
+@include mixinName(banner); (without parentheses):
+
+This is used when the mixinName(banner) mixin doesn't accept any arguments. It's a straightforward inclusion of the mixin.
+If your mixin doesn't have any parameters, you can use it without parentheses.
+@include mixinName(banner)(); (with parentheses):
+
+This is used when the mixinName(banner) mixin is defined with parameters (even if they are optional parameters with default values).
+If your mixin accepts parameters, you need to use parentheses to indicate that you are invoking the mixin.
+In your specific case, the mixinName(banner) mixin doesn't have any parameters, so both @include mixinName(banner); and @include mixinName(banner)(); will work the same way. The parentheses are optional when the mixin doesn't take any arguments.
+
+It's good practice to include parentheses when calling mixins even if they don't have parameters. This makes your code consistent and prepares it for potential future changes where you might add parameters to the mixin.
+

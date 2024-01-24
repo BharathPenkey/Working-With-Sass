@@ -1,22 +1,84 @@
 #main-nav {
-  background-color: #032f3e;
+  background: #032f3e;
 }
 #main-nav ul {
-  width: 100;
+  width: 100%;
   list-style: none;
 }
+#main-nav li {
+  float: left;
+  width: 14%;
+}
+#main-nav a {
+  color: #f8f9fb;
+  text-decoration: none;
+  padding: 16px;
+  display: block;
+  text-align: center;
+}
+
 #main-nav ul:after {
   content: "";
   display: block;
   clear: both;
 }
-#main-nav ul li {
-  float: left;
-  width: 16.6666666667%;
+
+section h1 {
+  font-size: 22px;
+  color: #032f3e;
 }
-#main-nav ul li a {
-  color: #f8f9fb;
-  text-decoration: none;
-  padding: 20px;
-  text-align: center;
+
+.lead-banner {
+  width: 100%;
+  position: relative;
+  color: white;
+  text-align: right;
+}
+.lead-banner .banner-content {
+  position: absolute;
+  top: 50px;
+  width: 100%;
+}
+.lead-banner img {
+  width: 100%;
+}
+.lead-banner span {
+  font-size: 46px;
+  display: block;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.lead-banner span.title {
+  font-weight: normal;
+  margin-bottom: 30px;
+}
+
+.lessons-banner {
+  width: 100%;
+  position: relative;
+  color: white;
+}
+.lessons-banner .banner-content {
+  position: absolute;
+  top: 50px;
+  width: 100%;
+}
+.lessons-banner img {
+  width: 100%;
+}
+.lessons-banner span {
+  font-size: 46px;
+  display: block;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.lessons-banner span.title {
+  font-weight: normal;
+  margin-bottom: 30px;
+}
+.lessons-banner li {
+  text-transform: uppercase;
+  font-size: 20px;
+  max-width: 500px;
+  margin: 60px 0;
 }

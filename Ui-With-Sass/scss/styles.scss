@@ -3,6 +3,7 @@
 
 $deepblue:#032f3e;
 $selectionHeading:24px;
+$sectionHeading:22px;
 $ofwhite:#f8f9fb;
 $bannerHeading:46px;
 
@@ -37,31 +38,116 @@ $bannerHeading:46px;
 
 // nested
 
-#main-nav{
-    background-color: $deepblue; // using varibles
-    ul{
-        width:100;
-        list-style: none;
-        &:after {
-            content: "";
-            display: block;
-            clear: both;
+// #main-nav{
+//     background-color: $deepblue; // using varibles
+//     ul{
+//         width:100;
+//         list-style: none;
+//         &:after {
+//             content: "";
+//             display: block;
+//             clear: both;
 
-        }
-        li{
-            float: left;
-            width: (100%/6);
+//         }
+//         li{
+//             float: left;
+//             width: (100%/6);
     
     
-            a{
-                color:$ofwhite;
-                text-decoration: none;
-                padding:20px;
-                // padding-top: 20px;
-                // display: block;
-                text-align: center;
-            }
-        }
+//             a{
+//                 color:$ofwhite;
+//                 text-decoration: none;
+//                 padding:20px;
+//                 // padding-top: 20px;
+//                 // display: block;
+//                 text-align: center;
+//             }
+//         }
+//     }
+// }
+
+
+// mixins
+// // mixins
+
+@mixin banner{
+    width:100%;
+    position: relative;
+    color:white;
+    .banner-content{
+        position :absolute;
+        top:50px;
+        width:100%;
+        
+    }
+    img{
+        width:100%;
+        
+    }
+    span{
+        font-size: $bannerHeading;
+        display: block;
+        text-transform: uppercase;
+        font-weight: bold;
+        
+    }
+    span.title{
+        font-weight: normal;
+        margin-bottom: 30px;
+        
     }
 }
 
+#main-nav{
+    background: $deepblue;
+    ul{
+        width:100%;
+        list-style: none;
+        
+    }
+    li{
+        float:left;
+        width:14%;
+        
+    }
+    a{
+        color: $ofwhite;
+        text-decoration:none;
+        padding:16px;
+        display:block;
+        text-align: center;
+        
+        
+    }// end main-div
+}
+// we are unable to see this deep blue b/c of li and ui 
+//  nested not proper 
+// so we are going to fix this with by CLEAR FIXING RULE
+
+#main-nav ul:after{
+    content: "";
+    display: block;
+    clear:both // clears all of the li tags that comes before 
+    
+}
+section h1{
+    font-size: $sectionHeading;
+    color: $deepblue;
+}
+
+// after creating mixins you have to apply then only you can see tham 
+
+.lead-banner{
+    @include banner;
+    text-align: right;
+}
+.lessons-banner{
+    @include banner();
+    li{
+        text-transform: uppercase;
+        font-size: 20px;
+        max-width: 500px;
+        margin:60px 0;
+
+    }
+}
