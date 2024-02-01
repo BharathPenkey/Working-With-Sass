@@ -36,7 +36,7 @@
       clear: both;
     }
   }
-  
+  //  grid with scss 
   @mixin grid($cols, $mgn){
     float: left;
     width: ((100% - (($cols - 1) * $mgn)) / $cols );

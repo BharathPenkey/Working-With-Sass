@@ -102,3 +102,42 @@ we import by @import "variables"; // dont need .scss as it checks and automatica
 
 
  makes nice and clean and update easily especially our files get bigger and bigger 
+
+ 
+//7 pseudo classes 
+  
+  we should use & ampersand 
+how we use in scss
+main-nav a:hover{
+    // normal css pseudo class
+}
+
+instead we write as in
+ a tag {
+     & :hover{
+        background:#333
+     }
+}
+
+and we can use &:after {//3 lines of code and we use every time so we can create a mixin as well}
+
+//8       math operators
+
+addition ,subtraction,multiplication,division 
+width:(40px/2,40px*2,40px-20px)
+
+
+
+// 9   grid with math sass  and also pass variables into mixins
+
+for dummy images  src="http://placehold.it/150x150"    change the sizes as per requirement 
+
+
+//10       colour   functions 
+
+sass provides a tons of functions to make changes of our css or styles
+
+functions link   https://sass-lang.com/documentation/modules/
+
+
+lets see couple of functions to change the hover effects on some elements
