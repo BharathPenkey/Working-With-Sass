@@ -92,3 +92,13 @@ In your specific case, the mixinName(banner) mixin doesn't have any parameters, 
 
 It's good practice to include parentheses when calling mixins even if they don't have parameters. This makes your code consistent and prepares it for potential future changes where you might add parameters to the mixin.
 
+
+//   6 importing files external
+
+in scss folder create a different files for variables ,mixins and import all in style.scss file 
+
+to import what comes first will import at top 
+we import by @import "variables"; // dont need .scss as it checks and automatically import 
+
+
+ makes nice and clean and update easily especially our files get bigger and bigger 
