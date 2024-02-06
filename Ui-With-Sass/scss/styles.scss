@@ -1,0 +1,227 @@
+// // varibales  #032f3e 
+// $deepBlue:#032f3e ;
+// $sectionHeading :24px;
+// $ofwhite:#f8f9fb;
+// $bannerHeading:46px;
+
+
+// // #main-nav{
+// //     background-color: $deepBlue;
+// //     font-size: x-large;
+// // }
+
+// // nested 
+
+// // mixins
+
+// @mixin banner{
+//     width:100%;
+//     position: relative;
+//     color:white;
+//     .banner-content{
+//         position :absolute;
+//         top:50px;
+//         width:100%;
+        
+//     }
+//     img{
+//         width:100%;
+        
+//     }
+//     span{
+//         font-size: $bannerHeading;
+//         display: block;
+//         text-transform: uppercase;
+//         font-weight: bold;
+        
+//     }
+//     span.title{
+//         font-weight: normal;
+//         margin-bottom: 30px;
+        
+//     }
+// }
+
+// #main-nav{
+//     background: $deepBlue ;
+//     ul{
+//         width:100%;
+//         list-style: none;
+        
+//     }
+//     li{
+//         float:left;
+//         width:14%;
+        
+//     }
+//     a{
+//         color:$ofwhite;
+//         text-decoration:none;
+//         padding:16px;
+//         display:block;
+//         text-align: center;
+        
+        
+//     }// end main-div
+// }
+// // we are unable to see this deep blue b/c of li and ui 
+// //  nested not proper 
+// // so we are going to fix this with by CLEAR FIXING RULE
+
+// #main-nav ul:after{
+//     content: "";
+//     display: block;
+//     clear:both // clears all of the li tags that comes before 
+    
+// }
+// section h1{
+//     font-size: $sectionHeading;
+//     color: $deepBlue;
+// }
+
+// // after creating mixins you have to apply then only you can see tham 
+
+// .lead-banner{
+//     @include banner;
+//     text-align: right;
+// }
+// .lessons-banner{
+//     @include banner();
+//     li{
+//         text-transform: uppercase;
+//         font-size: 20px;
+//         max-width: 500px;
+//         margin:60px 0;
+
+//     }
+// }
+
+
+// importing external files 
+
+@import "variables";
+@import "mixins";
+@import "reset";
+
+
+
+
+#main-nav{
+    background: $deepBlue ;
+    ul{
+        width:100%;
+        list-style: none;
+        // &:after {
+        //     content: "";
+        //     display: block;
+        //     clear:both 
+        // }  // instead we can do by mixin and import 
+    
+            @include clearFixing;
+            
+        
+        
+    }
+    li{
+        float:left;
+        width:(100%/6);  // math calculations
+        @include mQ(800px){
+            width:100%;
+         } 
+    }
+    a{
+        color:$ofwhite;
+        text-decoration:none;
+        padding:16px;
+        display:block;
+        text-align: center;
+        // 7       pseudo classes 
+        &:hover{
+            background:opacify($color: #000000, $amount: 1);
+        }
+        
+        
+    }// end main-div
+}
+
+
+// #main-nav ul:after{
+//     content: "";
+//     display: block;
+//     clear:both // clears all of the li tags that comes before 
+    
+// }
+section h1{
+    font-size: $sectionHeading;
+    color: $deepBlue;
+}
+
+// after creating mixins you have to apply then only you can see tham 
+
+.lead-banner{
+    @include banner;
+    text-align: right;
+}
+.lessons-banner{
+    @include banner();
+    li{
+        text-transform: uppercase;
+        font-size: 20px;
+        max-width: 500px;
+        margin:60px 0;
+
+    }
+}
+
+#services{
+    margin-bottom: 60px;
+
+    li{
+        float: left;
+        box-sizing: border-box;
+        text-align: center;
+        width: (100% /3);  // math calculations
+
+    }
+    img{
+        width:60%;
+        margin:20px 20%;
+
+    }
+    a{
+         text-decoration: none;
+         color:$deepBlue;
+         font-weight: bold;
+         &:hover{
+          color:red;
+         }
+    }
+    ul{
+        @include clearFixing
+    }
+}
+
+
+// #projects li{
+//     // float:left;
+//     // width:23%;// right margin not equally placed
+//     // margin-right: 2%;
+//     @include grid(4 ,2%);
+//     img{
+//        width: 100%; 
+//     }
+// }
+#projects li{
+    @include grid(6,2%);
+    img{
+      width: 100%;
+    }
+  }
+
+
+.triangle{
+    width:100px;
+    height:150px;
+    background-color: aquamarine;
+    clip-path: polygon((50% ,0)(0,100%)(100%,100%));
+}

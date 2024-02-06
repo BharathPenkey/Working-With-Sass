@@ -1,0 +1,76 @@
+
+@mixin banner{
+    width:100%;
+    position: relative;
+    color:white;
+    .banner-content{
+        position :absolute;
+        top:50px;
+        width:100%;
+        
+    }
+    img{
+        width:100%;
+        
+    }
+    span{
+        font-size: $bannerHeading;
+        display: block;
+        text-transform: uppercase;
+        font-weight: bold;
+        
+    }
+    span.title{
+        font-weight: normal;
+        margin-bottom: 30px;
+        
+    }
+}
+
+
+@mixin clearFixing{
+    &:after{
+        content: "";
+        display: block;
+        clear:both 
+
+    }
+}
+
+@mixin grid($cols, $mgn){
+    float: left;
+    margin-right: $mgn;
+    margin-bottom: $mgn;
+    width: ((100% - (($cols - 1) * $mgn)) / $cols);
+    
+    &:nth-child(#{$cols}n){
+      margin-right: 0;
+    }
+  }
+  
+  // for adding the dummy image http://placehold.it
+
+//   @mixin mQ($args){
+//     @media screen and (max-width:$args){
+//         @content; // key word
+
+//     }
+//   }
+
+// if statements 
+
+@mixin mQ($args...)//denotes allows as many dont know exactly how many are coming
+{ 
+    @if length($args)==1 {
+
+        @media screen and (max-width: nth($args,1)) {
+            @content ;
+        }
+    }
+    @if length($args)==2 {
+        @media screen and (max-width: nth($args,1)) and (min-width: nth($args,2)) {
+            @content;
+        }
+        
+    }
+}
