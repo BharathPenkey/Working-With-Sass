@@ -1,73 +1,17 @@
-// variables  
-//syntax - start dolarsign and varible name  $deepblue
-
-$deepblue:#032f3e;
-$selectionHeading:24px;
-$sectionHeading:22px;
-$ofwhite:#f8f9fb;
-$bannerHeading:46px;
+// // varibales  #032f3e 
+// $deepBlue:#032f3e ;
+// $sectionHeading :24px;
+// $ofwhite:#f8f9fb;
+// $bannerHeading:46px;
 
 
-// #main-nav{
-//     background-color: $deepblue; // using varibles
-//     ul{
-//         width:100;
-//         list-style: none;
-//         &:after {
-//             content: "";
-//             display: block;
-//             clear: both;
+// // #main-nav{
+// //     background-color: $deepBlue;
+// //     font-size: x-large;
+// // }
 
-//         }
-//     }
-//     li{
-//         float: left;
-//         width: (100%/6);
+// // nested 
 
-
-//     }
-//     a{
-//         color:$ofwhite;
-//         text-decoration: none;
-//         padding:20px;
-//         // padding-top: 20px;
-//         // display: block;
-//         text-align: center;
-//     }
-// }
-
-// nested
-
-// #main-nav{
-//     background-color: $deepblue; // using varibles
-//     ul{
-//         width:100;
-//         list-style: none;
-//         &:after {
-//             content: "";
-//             display: block;
-//             clear: both;
-
-//         }
-//         li{
-//             float: left;
-//             width: (100%/6);
-    
-    
-//             a{
-//                 color:$ofwhite;
-//                 text-decoration: none;
-//                 padding:20px;
-//                 // padding-top: 20px;
-//                 // display: block;
-//                 text-align: center;
-//             }
-//         }
-//     }
-// }
-
-
-// mixins
 // // mixins
 
 // @mixin banner{
@@ -99,7 +43,7 @@ $bannerHeading:46px;
 // }
 
 // #main-nav{
-//     background: $deepblue;
+//     background: $deepBlue ;
 //     ul{
 //         width:100%;
 //         list-style: none;
@@ -111,7 +55,7 @@ $bannerHeading:46px;
         
 //     }
 //     a{
-//         color: $ofwhite;
+//         color:$ofwhite;
 //         text-decoration:none;
 //         padding:16px;
 //         display:block;
@@ -132,7 +76,7 @@ $bannerHeading:46px;
 // }
 // section h1{
 //     font-size: $sectionHeading;
-//     color: $deepblue;
+//     color: $deepBlue;
 // }
 
 // // after creating mixins you have to apply then only you can see tham 
@@ -153,11 +97,11 @@ $bannerHeading:46px;
 // }
 
 
-//  import 
+// importing external files 
+
 @import "variables";
 @import "mixins";
 @import "reset";
-
 
 
 
@@ -180,7 +124,7 @@ $bannerHeading:46px;
     }
     li{
         float:left;
-        width:(100%/6);
+        width:(100%/6);  // math calculations
         @include mQ(800px){
             width:100%;
          } 
@@ -199,6 +143,8 @@ $bannerHeading:46px;
         
     }// end main-div
 }
+
+
 // #main-nav ul:after{
 //     content: "";
 //     display: block;
@@ -255,3 +201,27 @@ section h1{
     }
 }
 
+
+// #projects li{
+//     // float:left;
+//     // width:23%;// right margin not equally placed
+//     // margin-right: 2%;
+//     @include grid(4 ,2%);
+//     img{
+//        width: 100%; 
+//     }
+// }
+#projects li{
+    @include grid(6,2%);
+    img{
+      width: 100%;
+    }
+  }
+
+
+.triangle{
+    width:100px;
+    height:150px;
+    background-color: aquamarine;
+    clip-path: polygon((50% ,0)(0,100%)(100%,100%));
+}

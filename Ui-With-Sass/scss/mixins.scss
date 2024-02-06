@@ -1,62 +1,76 @@
+
 @mixin banner{
-    width: 100%;
+    width:100%;
     position: relative;
-    color: white;
+    color:white;
     .banner-content{
-      position: absolute;
-      top: 50px;
-      width: 100%;
+        position :absolute;
+        top:50px;
+        width:100%;
+        
     }
     img{
-      width: 100%;
+        width:100%;
+        
     }
     span{
-      font-size: $bannerHeading; 
-      display: block;
-      text-transform: uppercase;
-      font-weight: bold;
-      @include mQ(3000px, 1200px){
-        font-size: 68px;
-      }
+        font-size: $bannerHeading;
+        display: block;
+        text-transform: uppercase;
+        font-weight: bold;
+        
     }
-    span.sub-title{
-      font-weight: normal;
-      margin-bottom: 30px;
+    span.title{
+        font-weight: normal;
+        margin-bottom: 30px;
+        
     }
-    @include mQ(1200px){
-      max-height: 640px;
-      overflow: hidden;
-    }
-  }
-  
-  @mixin clearFix{
+}
+
+
+@mixin clearFixing{
     &:after{
-      content: "";
-      display: block;
-      clear: both;
+        content: "";
+        display: block;
+        clear:both 
+
     }
-  }
-  //  grid with scss 
-  @mixin grid($cols, $mgn){
+}
+
+@mixin grid($cols, $mgn){
     float: left;
-    width: ((100% - (($cols - 1) * $mgn)) / $cols );
     margin-right: $mgn;
     margin-bottom: $mgn;
+    width: ((100% - (($cols - 1) * $mgn)) / $cols);
+    
     &:nth-child(#{$cols}n){
       margin-right: 0;
     }
   }
   
-  @mixin mQ($args...){
-    @if length($args) == 1{
-      @media screen and (max-width: nth($args, 1)){
-        @content;
-      }
+  // for adding the dummy image http://placehold.it
+
+//   @mixin mQ($args){
+//     @media screen and (max-width:$args){
+//         @content; // key word
+
+//     }
+//   }
+
+// if statements 
+
+@mixin mQ($args...)//denotes allows as many dont know exactly how many are coming
+{ 
+    @if length($args)==1 {
+
+        @media screen and (max-width: nth($args,1)) {
+            @content ;
+        }
     }
-    @if length($args) == 2{
-      @media screen and (max-width: nth($args, 1)) and (min-width: nth($args, 2)){
-        @content;
-      }
+    @if length($args)==2 {
+        @media screen and (max-width: nth($args,1)) and (min-width: nth($args,2)) {
+            @content;
+        }
+        
     }
-  }
-  // 
+}

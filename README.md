@@ -141,3 +141,23 @@ functions link   https://sass-lang.com/documentation/modules/
 
 
 lets see couple of functions to change the hover effects on some elements
+
+
+
+// 11  content key word post the content 
+
+while using mixin media quary  what ever the propeties we give that will  be taken by the content keyword which we declare in mixins media quary
+
+// 12 if statements 
+  some times media quaries will have min-width then we can not use above mixin so we 
+  should have done based on conditions thats where this comes 
+
+   (max-width: nth($args,1))  so 1 it  takes //500px
+so above one takes 1st position value when we pass arguments i.e @include mQ(500px,4,9)
+                                                                               1   2  3
+
+
+
+// sass in react 
+
+npm i sass
